@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER BREACH: ZERO DAY</title>
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1p7F0YC1s756Um7lYH85n1uT3QpY9K8-O">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-root">
+        <!-- Main Menu -->
+        <div id="menu-screen" class="screen active">
+            <div class="menu-container">
+                <img src="https://lh3.googleusercontent.com/d/1p7F0YC1s756Um7lYH85n1uT3QpY9K8-O" alt="Crypto Raviya Logo" class="brand-logo">
+                <h1 class="glitch" data-text="CYBER BREACH: ZERO DAY">CYBER BREACH: ZERO DAY</h1>
+                <p class="subtitle">SECURITY OPERATIONS CENTER // SIMULATION ENVIRONMENT</p>
+                
+                <div class="level-select">
+                    <h2>SELECT THREAT LEVEL</h2>
+                    <div class="level-buttons">
+                        <button class="btn level-btn" data-level="1">LEVEL 1: RECONNAISSANCE</button>
+                        <button class="btn level-btn" data-level="2">LEVEL 2: CREDENTIAL ATTACK</button>
+                        <button class="btn level-btn" data-level="3">LEVEL 3: WEB ATTACK</button>
+                        <button class="btn level-btn" data-level="4">LEVEL 4: MULTI-STAGE ATTACK</button>
+                        <button class="btn level-btn" data-level="5">LEVEL 5: ZERO-DAY SCENARIO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-overlay"></div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <!-- HUD -->
+            <div class="hud">
+                <div class="hud-brand">
+                    <img src="https://lh3.googleusercontent.com/d/1p7F0YC1s756Um7lYH85n1uT3QpY9K8-O" alt="Crypto Raviya" class="hud-logo">
+                    <span>CSOC Terminal</span>
+                </div>
+                <div class="hud-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">INTEGRITY</div>
+                        <div class="stat-value">
+                            <div class="progress-bar"><div id="integrity-fill" class="fill integrity-high"></div></div>
+                            <span id="integrity-text">100%</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">THREAT LEVEL</div>
+                        <div class="stat-value">
+                            <div class="progress-bar"><div id="threat-fill" class="fill threat-low"></div></div>
+                            <span id="threat-text">LOW</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">SCORE</div>
+                        <div class="stat-value text-cyan" id="score-text">000000</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">TIME</div>
+                        <div class="stat-value text-green" id="time-text">00:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Network Topology Area -->
+            <div class="network-area">
+                <svg id="network-lines" width="100%" height="100%"></svg>
+                <div id="nodes-container">
+                    <!-- Nodes will be injected by JS -->
+                </div>
+            </div>
+
+            <!-- Side Panel (Actions & Logs) -->
+            <div class="side-panel">
+                <div class="panel-section node-details">
+                    <h3>NODE INSPECTOR</h3>
+                    <div id="selected-node-info">
+                        <p class="placeholder-text">Select a node on the network map to view details and available countermeasures.</p>
+                    </div>
+                    <div id="action-buttons" class="hidden">
+                        <!-- Buttons injected dynamically based on node state -->
+                    </div>
+                </div>
+
+                <div class="panel-section event-log">
+                    <h3>SECURITY EVENT LOG</h3>
+                    <div id="log-container">
+                        <div class="log-entry system">>> SIMULATION STARTED...</div>
+                        <div class="log-entry system">>> MONITORING NETWORK TRAFFIC...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="scanlines"></div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="screen">
+            <div class="menu-container">
+                <img src="https://lh3.googleusercontent.com/d/1p7F0YC1s756Um7lYH85n1uT3QpY9K8-O" alt="Crypto Raviya Logo" class="brand-logo">
+                <h1 id="end-title" class="glitch" data-text="MISSION FAILED">MISSION FAILED</h1>
+                <p id="end-subtitle" class="subtitle">CRITICAL SYSTEMS COMPROMISED</p>
+                
+                <div class="stats-summary">
+                    <div class="summary-row"><span>Threats Stopped:</span> <span id="end-threats">0</span></div>
+                    <div class="summary-row"><span>Systems Saved:</span> <span id="end-systems">0</span></div>
+                    <div class="summary-row"><span>Avg Response Time:</span> <span id="end-response">0.0s</span></div>
+                    <div class="summary-row"><span>Final Score:</span> <span id="end-score" class="text-cyan">0</span></div>
+                    <div class="summary-row"><span>XP Gained:</span> <span id="end-xp" class="text-green">0</span></div>
+                    <div class="summary-row"><span>Security Rating:</span> <span id="end-rating">F</span></div>
+                </div>
+
+                <div class="level-buttons mt-2">
+                    <button id="btn-retry" class="btn">RETRY LEVEL</button>
+                    <button id="btn-main-menu" class="btn">MAIN MENU</button>
+                </div>
+            </div>
+            <div class="grid-overlay"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
